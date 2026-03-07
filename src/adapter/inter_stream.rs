@@ -12,6 +12,9 @@ pub struct InterStreamEnd {
 	// When `ChatOptions..capture_usage == true`
 	pub captured_usage: Option<Usage>,
 
+	// Provider-specific stop reason (e.g., OpenAI `finish_reason`, Anthropic `stop_reason`).
+	pub captured_stop_reason: Option<String>,
+
 	// When `ChatOptions..capture_content == true`
 	pub captured_text_content: Option<String>,
 

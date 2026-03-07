@@ -190,6 +190,7 @@ impl Adapter for OllamaAdapter {
 			reasoning_content,
 			model_iden: model_iden.clone(),
 			provider_model_iden: model_iden,
+			stop_reason: body.x_take::<Option<String>>("done_reason").ok().flatten(),
 			usage,
 			captured_raw_body,
 		})

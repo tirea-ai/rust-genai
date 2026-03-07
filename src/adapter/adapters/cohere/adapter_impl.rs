@@ -151,6 +151,7 @@ impl Adapter for CohereAdapter {
 			reasoning_content: None,
 			model_iden,
 			provider_model_iden,
+			stop_reason: None,
 			usage,
 			captured_raw_body: None, // Set by the client exec_chat
 		})
