@@ -318,6 +318,7 @@ impl Adapter for GeminiAdapter {
 			reasoning_content: Some(reasoning_text),
 			model_iden,
 			provider_model_iden,
+			stop_reason: None,
 			usage,
 			captured_raw_body: None, // Set by the client exec_chat
 		})

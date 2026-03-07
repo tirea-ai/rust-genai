@@ -306,6 +306,7 @@ impl Adapter for AnthropicAdapter {
 		let usage = body.x_take::<Value>("usage");
 
 		let usage = usage.map(Self::into_usage).unwrap_or_default();
+		let stop_reason = body.x_take::<Option<String>>("stop_reason").ok().flatten();
 
 		// -- Capture the content
 		let mut content: MessageContent = MessageContent::default();
@@ -359,6 +360,7 @@ impl Adapter for AnthropicAdapter {
 			reasoning_content,
 			model_iden,
 			provider_model_iden,
+			stop_reason,
 			usage,
 			captured_raw_body: None, // Set by the client exec_chat
 		})

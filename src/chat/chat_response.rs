@@ -27,6 +27,10 @@ pub struct ChatResponse {
 	pub provider_model_iden: ModelIden,
 
 	// pub model
+	/// Provider-specific stop reason captured on non-streaming responses.
+	/// Examples: OpenAI `finish_reason`, Anthropic `stop_reason`.
+	pub stop_reason: Option<String>,
+
 	/// Token usage reported by the provider.
 	pub usage: Usage,
 

@@ -219,6 +219,7 @@ impl Adapter for OpenAIRespAdapter {
 			reasoning_content,
 			model_iden,
 			provider_model_iden,
+			stop_reason: Some(resp.status),
 			usage,
 			captured_raw_body,
 		})

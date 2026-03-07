@@ -155,6 +155,7 @@ impl futures::Stream for OllamaStreamer {
 
 							let inter_stream_end = InterStreamEnd {
 								captured_usage: self.captured_data.usage.take(),
+								captured_stop_reason: self.captured_data.stop_reason.take(),
 								captured_text_content: self.captured_data.content.take(),
 								captured_reasoning_content: self.captured_data.reasoning_content.take(),
 								captured_tool_calls: self.captured_data.tool_calls.take(),
@@ -177,6 +178,7 @@ impl futures::Stream for OllamaStreamer {
 						self.done = true;
 						let inter_stream_end = InterStreamEnd {
 							captured_usage: self.captured_data.usage.take(),
+							captured_stop_reason: self.captured_data.stop_reason.take(),
 							captured_text_content: self.captured_data.content.take(),
 							captured_reasoning_content: self.captured_data.reasoning_content.take(),
 							captured_tool_calls: self.captured_data.tool_calls.take(),
